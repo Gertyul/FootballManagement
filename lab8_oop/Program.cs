@@ -14,7 +14,8 @@
             Console.WriteLine("1. Manage Players");
             Console.WriteLine("2. Manage Games");
             Console.WriteLine("3. Manage Stadiums");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Search");
+            Console.WriteLine("5. Exit");
             Console.Write("Select an option: ");
             string option = Console.ReadLine();
 
@@ -30,6 +31,9 @@
                     ManageStadiums(stadiumManagement);
                     break;
                 case "4":
+                    Search(playerManagement, gameManagement, stadiumManagement);
+                    break;
+                case "5":
                     running = false;
                     break;
                 default:
@@ -584,4 +588,43 @@
         }
         Console.ReadLine();
     }
+
+    static void Search(PlayerManagement playerManagement, GameManagement gameManagement, StadiumManagement stadiumManagement)
+    {
+        bool running = true;
+
+        while (running)
+        {
+            Console.Clear();
+            Console.WriteLine("Search");
+            Console.WriteLine("1. Search player");
+            Console.WriteLine("2. Search game");
+            Console.WriteLine("3. Search starium");
+            Console.WriteLine("4. Back");
+            Console.Write("Select an option: ");
+            string option = Console.ReadLine();
+
+            switch (option)
+            {
+                case "1":
+                    ViewPlayerInfo(playerManagement);
+                    break;
+                case "2":
+                    ViewGameInfo(gameManagement);
+                    break;
+                case "3":
+                    ViewStadiumInfo(stadiumManagement);
+                    break;
+                case "4":
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    Console.ReadLine();
+                    break;
+            }
+        }
+        
+    }
+
 }

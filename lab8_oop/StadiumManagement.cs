@@ -1,4 +1,4 @@
-﻿public class StadiumManagement
+﻿public class StadiumManagement : Stadium
 {
     private List<Stadium> stadiums = new List<Stadium>();
 

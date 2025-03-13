@@ -1,4 +1,4 @@
-﻿public class GameManagement
+﻿public class GameManagement : Game
 {
     private List<Game> games = new List<Game>();
 
